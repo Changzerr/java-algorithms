@@ -17,7 +17,8 @@ public class RBTreeTest {
         bst.addNode(30);
         bst.addNode(40);
         bst.addNode(57);
-
+        //bst.printTree(bst.getRoot());
+        //System.out.println("===============");
         bst.addNode(3);
         bst.addNode(2);
 

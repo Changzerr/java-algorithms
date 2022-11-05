@@ -44,6 +44,7 @@ class RBTreeNode<T extends Comparable<T>> {
     void setParent(RBTreeNode<T> parent) {
         this.parent = parent;
     }
+
     boolean isRed() {
         return red;
     }
@@ -62,10 +63,10 @@ class RBTreeNode<T extends Comparable<T>> {
     }
 
     void makeRed(){
-        red=true;
+        this.red=true;
     }
     void makeBlack(){
-        red=false;
+        this.red=false;
     }
     @Override
     public String toString(){
@@ -90,6 +91,15 @@ public class RBTree<T extends Comparable<T>> {
     RBTree(boolean overrideMode){
         this();
         this.overrideMode = overrideMode;
+    }
+
+    private void setParent(RBTreeNode<T> node,RBTreeNode<T> parent){
+        if(node!=null){
+            node.setParent(parent);
+            if(parent==root){
+                node.setParent(null);
+            }
+        }
     }
 
     public boolean isOverrideMode(){return overrideMode;}
@@ -133,7 +143,7 @@ public class RBTree<T extends Comparable<T>> {
     public T addNode(RBTreeNode<T> node){
         //init node
         node.setLeft(null);
-        node.setParent(null);
+        setParent(node,null);
         node.setRight(null);
         node.setRed(true);
 
@@ -141,7 +151,6 @@ public class RBTree<T extends Comparable<T>> {
         if (root.getLeft() == null){
             //node become root
             root.setLeft(node);
-            node.setParent(root);
             //root is blank
             node.makeBlack();
             size.incrementAndGet();
@@ -159,7 +168,7 @@ public class RBTree<T extends Comparable<T>> {
             }
 
             //x become node's parent
-            node.setParent(x);
+            setParent(node, x);
 
             if(cmp>0){
                 x.setLeft(node);
@@ -212,7 +221,7 @@ public class RBTree<T extends Comparable<T>> {
                         parent.makeBlack();
 
                         //end loop
-                        parent = null;
+                        //parent = null;
                     }
                     ancestor.makeRed();
                 }else{
@@ -231,7 +240,7 @@ public class RBTree<T extends Comparable<T>> {
                         parent.makeBlack();
 
                         //end loop
-                        parent = null;
+                        //parent = null;
                     }
                     ancestor.makeRed();
                 }
@@ -242,13 +251,14 @@ public class RBTree<T extends Comparable<T>> {
                 RBTreeNode<T> ancestor = parent.getParent();
                 ancestor.makeRed();
 
+                node = parent.getParent();
                 //parent as new insert node
-                parent = ancestor;
+                parent = node.getParent();
             }
-            RBTreeNode<T> root = getRoot();
-            root.makeBlack();
-            root.setParent(null);
         }
+        RBTreeNode<T> root = getRoot();
+        root.makeBlack();
+        setParent(root, null);
     }
 
     private void rotateRight(RBTreeNode<T> node) {
@@ -261,9 +271,10 @@ public class RBTree<T extends Comparable<T>> {
         //parent.setRight(left);
         RBTreeNode<T> leftRight = left.getRight();
         node.setLeft(leftRight);
-        leftRight.setParent(node);
-        node.setParent(left);
+        setParent(leftRight, node);
+
         left.setRight(node);
+        setParent(node, left);
 
         if(parent == null) {
             root.setLeft(left);
@@ -274,7 +285,7 @@ public class RBTree<T extends Comparable<T>> {
                 parent.setRight(left);
             }
         }
-        left.setParent(parent);
+        setParent(left, parent);
 
     }
 
@@ -290,10 +301,10 @@ public class RBTree<T extends Comparable<T>> {
 
         RBTreeNode<T> rightLeft = right.getLeft();
         node.setRight(rightLeft);
-        rightLeft.setParent(node);
+        setParent(rightLeft, node);
 
         right.setLeft(node);
-        node.setParent(right);
+        setParent(node, right);
 
         if (parent == null){
             root.setLeft(right);
@@ -304,7 +315,7 @@ public class RBTree<T extends Comparable<T>> {
                 parent.setRight(right);
             }
         }
-        right.setParent(parent);
+        setParent(right, parent);
     }
 
 
@@ -354,6 +365,8 @@ public class RBTree<T extends Comparable<T>> {
         return parent;
     }
 
+
+
     /**
      * debug method,it used print the given node and its children nodes,
      * every layer output in one line
@@ -391,5 +404,31 @@ public class RBTree<T extends Comparable<T>> {
             }
         }
     }
+    public static void main(String[] args) {
+        RBTree<Integer> bst = new RBTree<Integer>();
+        bst.addNode(20);
+        bst.addNode(10);
+        bst.addNode(5);
+        bst.addNode(30);
+        bst.addNode(40);
+        bst.addNode(57);
 
+        bst.addNode(3);
+        bst.addNode(2);
+
+        bst.addNode(4);
+        bst.addNode(35);
+        bst.addNode(25);
+        bst.addNode(18);
+        bst.addNode(22);
+        bst.addNode(23);
+        bst.addNode(24);
+        bst.addNode(19);
+        bst.addNode(18);
+
+
+        //bst.remove(2);
+
+        bst.printTree(bst.getRoot());
+    }
 }
