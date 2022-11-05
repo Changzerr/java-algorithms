@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3400319e-95fa-4ed5-a0e4-83243e567b6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures/src/main/java/tree/RBTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-structures/src/main/java/tree/RBTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,12 +60,12 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="leetcode.id" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
-  <component name="RunManager" selected="JUnit.RBTreeTest.testTree">
+  <component name="RunManager" selected="JUnit.RBTreeTest.testRBTreeInsert">
     <configuration name="RBTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tree.RBTree" />
       <module name="data-structures" />
@@ -74,6 +75,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RBTreeTest.testRBTreeInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="data-structures" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tree" />
+      <option name="MAIN_CLASS_NAME" value="tree.RBTreeTest" />
+      <option name="METHOD_NAME" value="testRBTreeInsert" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -96,6 +113,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RBTreeTest.testRBTreeInsert" />
         <item itemvalue="JUnit.RBTreeTest.testTree" />
         <item itemvalue="Application.RBTree" />
       </list>
@@ -111,7 +129,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667522820358</updated>
-      <workItem from="1667522823160" duration="16301000" />
+      <workItem from="1667522823160" duration="18397000" />
     </task>
     <task id="LOCAL-00001" summary="changzer: printRBTree()">
       <created>1667630825919</created>
@@ -134,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667637696283</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="changzer, test：testRBTreeInsert">
+      <created>1667637860258</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667637860258</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,37 +169,38 @@
     <MESSAGE value="changzer: printRBTree()" />
     <MESSAGE value="changzer: test RBTree" />
     <MESSAGE value="changzer: fix BUG, when uncle is red, ancestor become new insert node" />
-    <option name="LAST_COMMIT_MESSAGE" value="changzer: fix BUG, when uncle is red, ancestor become new insert node" />
+    <MESSAGE value="changzer, test：testRBTreeInsert" />
+    <option name="LAST_COMMIT_MESSAGE" value="changzer, test：testRBTreeInsert" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1667523615202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1667523615202" />
-    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2" timestamp="1667637694400">
+    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2" timestamp="1667637858546">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1667637694400" />
+    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1667637858546" />
     <state x="555" y="112" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1667631106369" />
-    <state width="1237" height="245" key="GridCell.Tab.0.bottom" timestamp="1667637541470">
+    <state width="1237" height="245" key="GridCell.Tab.0.bottom" timestamp="1667638044117">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="245" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1667637541470" />
+    <state width="1237" height="245" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1667638044117" />
     <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1667632413477" />
-    <state width="1237" height="245" key="GridCell.Tab.0.center" timestamp="1667637541470">
+    <state width="1237" height="245" key="GridCell.Tab.0.center" timestamp="1667638044117">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="245" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1667637541470" />
+    <state width="1237" height="245" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1667638044117" />
     <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1667632413477" />
-    <state width="1237" height="245" key="GridCell.Tab.0.left" timestamp="1667637541470">
+    <state width="1237" height="245" key="GridCell.Tab.0.left" timestamp="1667638044117">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="245" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1667637541470" />
+    <state width="1237" height="245" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1667638044117" />
     <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1667632413477" />
-    <state width="1237" height="245" key="GridCell.Tab.0.right" timestamp="1667637541470">
+    <state width="1237" height="245" key="GridCell.Tab.0.right" timestamp="1667638044117">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="245" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1667637541470" />
+    <state width="1237" height="245" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1667638044117" />
     <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1667632413477" />
     <state width="595" height="271" key="GridCell.Tab.1.bottom" timestamp="1667637223101">
       <screen x="0" y="0" width="1280" height="680" />
@@ -212,6 +238,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="595" height="271" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1667637223101" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1667638008741">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1667638008741" />
     <state x="233" y="62" key="Vcs.Push.Dialog.v2" timestamp="1667637700324">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -228,16 +258,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="593" y="129" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1667522955749" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/data-structures/src/test/java/tree/RBTreeTest.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

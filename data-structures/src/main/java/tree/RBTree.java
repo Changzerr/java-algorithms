@@ -77,7 +77,6 @@ class RBTreeNode<T extends Comparable<T>> {
 public class RBTree<T extends Comparable<T>> {
     //virtual head node
     private RBTreeNode<T> root;
-
     private AtomicLong size = new AtomicLong(0);
 
     //in overwrite mode,all node's value can not  has same    value
@@ -113,6 +112,7 @@ public class RBTree<T extends Comparable<T>> {
     public long getSize() {
         return size.get();
     }
+
     /**
      * get the root node
      * @return
@@ -151,19 +151,19 @@ public class RBTree<T extends Comparable<T>> {
         if (root.getLeft() == null){
             //node become root
             root.setLeft(node);
-            //root is blank
+            //root is black
             node.makeBlack();
-            size.incrementAndGet();
         }else {
+            //find insert point
             RBTreeNode<T> x = findParentNode(node);
             int cmp = x.getValue().compareTo(node.getValue());
 
+            //value exists,ignore this node
             if(this.overrideMode && cmp==0){
                 T v = x.getValue();
                 x.setValue(node.getValue());
                 return v;
             }else if(cmp==0){
-                //value exists,ignore this node
                 return x.getValue();
             }
 
@@ -178,9 +178,8 @@ public class RBTree<T extends Comparable<T>> {
 
             //Keep RBTree's identity.
             fixInsert(node);
-            size.incrementAndGet();
-
         }
+        size.incrementAndGet();
         return null;
     }
 
@@ -193,16 +192,19 @@ public class RBTree<T extends Comparable<T>> {
      *          case 3: LR type, first rotate left and then rotate right, change the color of current and ancestor
      *          case 4: RL type, first rotate Right and then rotate left, change the color of current and ancestor
      * else insert node's uncle is red:
-     *          change the color of parent、uncle with ancestor，and look on the parent as new insert node
-     * @param node
+     *          change the color of parent、uncle with ancestor，and look on the ancestor as new insert node
+     * @param node is new node
      */
     private void fixInsert(RBTreeNode<T> node) {
         RBTreeNode<T> parent = node.getParent();
 
+        //whether need to fix
         while (parent != null && parent.isRed()) {
             //get uncle
             RBTreeNode<T> uncle = getUncle(node);
+
             if(uncle == null || uncle.isBlack()) {
+                //uncle is black, have 4 cases
                 RBTreeNode<T> ancestor = parent.getParent();
                 if (ancestor.getLeft() == parent){
                     boolean isRight = node == parent.getRight();
@@ -218,11 +220,10 @@ public class RBTree<T extends Comparable<T>> {
                         //end loop
                         parent = null;
                     }else{
-                        parent.makeBlack();
-
                         //end loop
-                        //parent = null;
+                        parent.makeBlack();
                     }
+
                     ancestor.makeRed();
                 }else{
                     boolean isLeft = node == parent.getLeft();
@@ -237,11 +238,10 @@ public class RBTree<T extends Comparable<T>> {
                         //end loop
                         parent = null;
                     }else {
-                        parent.makeBlack();
-
                         //end loop
-                        //parent = null;
+                        parent.makeBlack();
                     }
+
                     ancestor.makeRed();
                 }
             }else{
@@ -251,31 +251,41 @@ public class RBTree<T extends Comparable<T>> {
                 RBTreeNode<T> ancestor = parent.getParent();
                 ancestor.makeRed();
 
+                //ancestor as new insert node
                 node = parent.getParent();
-                //parent as new insert node
                 parent = node.getParent();
             }
         }
+
+        //make sure root is black
         RBTreeNode<T> root = getRoot();
         root.makeBlack();
         setParent(root, null);
     }
 
+    /**
+     * rotate right
+     * @param node
+     */
     private void rotateRight(RBTreeNode<T> node) {
+        //get left
         RBTreeNode<T> left = node.getLeft();
         if(left==null){
             throw new java.lang.IllegalStateException("left node is null");
         }
+        //get parent
         RBTreeNode<T> parent = node.getParent();
 
-        //parent.setRight(left);
+        //leftRight move to node's left
         RBTreeNode<T> leftRight = left.getRight();
         node.setLeft(leftRight);
         setParent(leftRight, node);
 
+        //node move to leftRight
         left.setRight(node);
         setParent(node, left);
 
+        //change left's parent
         if(parent == null) {
             root.setLeft(left);
         }else {
@@ -286,9 +296,12 @@ public class RBTree<T extends Comparable<T>> {
             }
         }
         setParent(left, parent);
-
     }
 
+    /**
+     * rotate left
+     * @param node
+     */
     private void rotateLeft(RBTreeNode<T> node) {
         //get right
         RBTreeNode<T> right = node.getRight();
@@ -299,13 +312,16 @@ public class RBTree<T extends Comparable<T>> {
         //get parent
         RBTreeNode<T> parent = node.getParent();
 
+        //rightLeft move to node's right
         RBTreeNode<T> rightLeft = right.getLeft();
         node.setRight(rightLeft);
         setParent(rightLeft, node);
 
+        //node move to rightLeft
         right.setLeft(node);
         setParent(node, right);
 
+        //change left's parent
         if (parent == null){
             root.setLeft(right);
         }else{
@@ -352,11 +368,14 @@ public class RBTree<T extends Comparable<T>> {
         while (cur != null){
             int cmp = cur.getValue().compareTo(node.getValue());
             if (cmp == 0){
+                //the same value, return it
                 return cur;
             }else if (cmp < 0){
+                //Greater than, right
                 parent = cur;
                 cur = cur.getRight();
             }else {
+                //Less than, left
                 parent = cur;
                 cur = cur.getLeft();
             }
@@ -403,32 +422,5 @@ public class RBTree<T extends Comparable<T>> {
                 firstQueue = !firstQueue;
             }
         }
-    }
-    public static void main(String[] args) {
-        RBTree<Integer> bst = new RBTree<Integer>();
-        bst.addNode(20);
-        bst.addNode(10);
-        bst.addNode(5);
-        bst.addNode(30);
-        bst.addNode(40);
-        bst.addNode(57);
-
-        bst.addNode(3);
-        bst.addNode(2);
-
-        bst.addNode(4);
-        bst.addNode(35);
-        bst.addNode(25);
-        bst.addNode(18);
-        bst.addNode(22);
-        bst.addNode(23);
-        bst.addNode(24);
-        bst.addNode(19);
-        bst.addNode(18);
-
-
-        //bst.remove(2);
-
-        bst.printTree(bst.getRoot());
     }
 }
