@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  */
 public class RBTreeTest {
     @Test
-    public void testTree() {
+    public void testRBTreeInsert() {
         RBTree<Integer> bst = new RBTree<Integer>();
         bst.addNode(20);
         bst.addNode(10);
@@ -17,8 +17,6 @@ public class RBTreeTest {
         bst.addNode(30);
         bst.addNode(40);
         bst.addNode(57);
-        //bst.printTree(bst.getRoot());
-        //System.out.println("===============");
         bst.addNode(3);
         bst.addNode(2);
 

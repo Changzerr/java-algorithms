@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3400319e-95fa-4ed5-a0e4-83243e567b6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-structures/src/main/java/tree/RBTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-structures/src/main/java/tree/RBTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-structures/src/test/java/tree/RBTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-structures/src/test/java/tree/RBTreeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +111,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667522820358</updated>
-      <workItem from="1667522823160" duration="15999000" />
+      <workItem from="1667522823160" duration="16301000" />
     </task>
     <task id="LOCAL-00001" summary="changzer: printRBTree()">
       <created>1667630825919</created>
@@ -129,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667631108272</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="changzer: fix BUG, when uncle is red, ancestor become new insert node">
+      <created>1667637696283</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667637696283</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,16 +143,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changzer: printRBTree()" />
     <MESSAGE value="changzer: test RBTree" />
-    <option name="LAST_COMMIT_MESSAGE" value="changzer: test RBTree" />
+    <MESSAGE value="changzer: fix BUG, when uncle is red, ancestor become new insert node" />
+    <option name="LAST_COMMIT_MESSAGE" value="changzer: fix BUG, when uncle is red, ancestor become new insert node" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1667523615202">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1667523615202" />
-    <state x="555" y="112" key="CommitChangelistDialog2" timestamp="1667631106369">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2" timestamp="1667637694400">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1667637694400" />
     <state x="555" y="112" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1667631106369" />
     <state width="1237" height="245" key="GridCell.Tab.0.bottom" timestamp="1667637541470">
       <screen x="0" y="0" width="1280" height="680" />
@@ -205,6 +212,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="595" height="271" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1667637223101" />
+    <state x="233" y="62" key="Vcs.Push.Dialog.v2" timestamp="1667637700324">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="62" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1667637700324" />
     <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1667522823606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
