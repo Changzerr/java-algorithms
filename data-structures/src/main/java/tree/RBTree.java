@@ -122,6 +122,27 @@ public class RBTree<T extends Comparable<T>> {
     }
 
     /**
+     * find the value by give value(include key,key used for search,
+     * other field is not used,@see compare method).if this value not exist return null
+     * @param value
+     * @return
+     */
+    public T find(T value){
+        RBTreeNode<T> dataRoot = getRoot();
+        while(dataRoot!=null){
+            int cmp = dataRoot.getValue().compareTo(value);
+            if(cmp<0){
+                dataRoot = dataRoot.getRight();
+            }else if(cmp>0){
+                dataRoot = dataRoot.getLeft();
+            }else{
+                return dataRoot.getValue();
+            }
+        }
+        return null;
+    }
+
+    /**
      * add value to a new node,if this value exist in this tree,
      * if value exist,it will return the exist value.otherwise return null
      * if override mode is true,if value exist in the tree,
