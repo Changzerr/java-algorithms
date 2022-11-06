@@ -3,7 +3,7 @@ package tree;
 import org.junit.jupiter.api.Test;
 
 /**
- * @author lingqu
+ * @author changzer
  * @date 2022/11/5
  * @apiNote
  */
@@ -30,8 +30,24 @@ public class RBTreeTest {
         bst.addNode(19);
         bst.addNode(18);
 
+        bst.printTree(bst.getRoot());
+    }
 
-        //bst.remove(2);
+
+    @Test
+    public void testRBTreeFind() {
+        RBTree<Integer> bst = new RBTree<Integer>();
+        bst.addNode(20);
+        bst.addNode(10);
+        bst.addNode(5);
+        bst.addNode(30);
+        bst.addNode(40);
+        bst.addNode(57);
+        bst.addNode(3);
+        bst.addNode(2);
+
+        System.out.println(bst.find(40));
+        System.out.println("==============");
 
         bst.printTree(bst.getRoot());
     }
