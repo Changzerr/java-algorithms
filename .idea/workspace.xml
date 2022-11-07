@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3400319e-95fa-4ed5-a0e4-83243e567b6a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-structures/src/main/java/tree/SearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-structures/src/main/java/tree/SearchTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +170,7 @@
       <workItem from="1667522823160" duration="19005000" />
       <workItem from="1667714541701" duration="2069000" />
       <workItem from="1667743077631" duration="612000" />
-      <workItem from="1667786157355" duration="9967000" />
+      <workItem from="1667786157355" duration="10851000" />
     </task>
     <task id="LOCAL-00001" summary="changzer: printRBTree()">
       <created>1667630825919</created>
@@ -251,7 +249,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667820578931</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="changzer, code：二叉排序树删除操作">
+      <created>1667822627446</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667822627446</updated>
+    </task>
+    <task id="LOCAL-00013" summary="changzer, code：二叉排序树删除操作">
+      <created>1667822706548</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667822706548</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,9 +279,9 @@
     <MESSAGE value="changzer, test：测试红黑树查找" />
     <MESSAGE value="changzer, code：二叉排序树" />
     <MESSAGE value="changzer, test：测试二叉排序树插入操作" />
-    <MESSAGE value="changzer, code：二叉排序树删除操作" />
     <MESSAGE value="changzer, test：测试二叉排序树删除操作" />
-    <option name="LAST_COMMIT_MESSAGE" value="changzer, test：测试二叉排序树删除操作" />
+    <MESSAGE value="changzer, code：二叉排序树删除操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="changzer, code：二叉排序树删除操作" />
   </component>
   <component name="WindowStateProjectService">
     <state x="510" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1667786588532">
@@ -277,10 +289,10 @@
     </state>
     <state x="510" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1667786588532" />
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1667523615202" />
-    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2" timestamp="1667822640009">
+    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2" timestamp="1667822705167">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1667822640009" />
+    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1667822705167" />
     <state x="555" y="112" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1667805591669" />
     <state width="1237" height="244" key="GridCell.Tab.0.bottom" timestamp="1667822569566">
       <screen x="0" y="0" width="1280" height="680" />
@@ -365,13 +377,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/data-structures/src/main/java/tree/SearchTree.java</url>
-          <line>162</line>
+          <line>206</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/data-structures/src/main/java/tree/SearchTree.java</url>
-          <line>142</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

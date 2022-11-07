@@ -78,11 +78,21 @@ public class SearchTree<T extends Comparable<T>> {
         return size.get();
     }
 
+    /**
+     * 添加结点
+     * @param value
+     * @return
+     */
     public T addNode(T value) {
         SearchTreeNode<T> node = new SearchTreeNode<T>(value);
         return addNode(node);
     }
 
+    /**
+     * 添加结点
+     * @param node
+     * @return
+     */
     public T addNode(SearchTreeNode<T> node) {
         //init node
         node.setLeft(null);
@@ -103,6 +113,7 @@ public class SearchTree<T extends Comparable<T>> {
                 return x.getValue();
             }
 
+            //插入位置
             if (cmp > 0) {
                 x.setLeft(node);
             } else {
@@ -113,6 +124,11 @@ public class SearchTree<T extends Comparable<T>> {
         return node.getValue();
     }
 
+    /**
+     * 找到插入位置
+     * @param node
+     * @return
+     */
     private SearchTreeNode<T> findParentNode(SearchTreeNode<T> node) {
         SearchTreeNode<T> parent = getRoot();
         SearchTreeNode<T> cur = parent;
@@ -120,9 +136,11 @@ public class SearchTree<T extends Comparable<T>> {
         while (cur != null) {
             int cmp = cur.getValue().compareTo(node.getValue());
             if (cmp > 0) {
+                //当前值大，向左
                 parent = cur;
                 cur = cur.getLeft();
             } else if (cmp < 0) {
+                //当前值大，向右
                 parent = cur;
                 cur = cur.getRight();
             } else {
@@ -132,57 +150,101 @@ public class SearchTree<T extends Comparable<T>> {
         return parent;
     }
 
+
+    /**
+     * 删除结点
+     * @param value
+     * @return
+     */
     public boolean removeNode(T value) {
+        //查找所需删除的结点
         SearchTreeNode<T> node = findRemoveNode(value);
+
+        //没有找到, 删除失败
         if (node == null) {
             return false;
         }
         return removeNode(node);
     }
+
+    /**
+     * 具体删除操作
+     * @param node
+     * @return
+     */
     public boolean removeNode(SearchTreeNode<T> node) {
+        //查找所需删除结点的父结点
         SearchTreeNode<T> parent = findRemoveParentNode(node);
+
+        //判断是否是根结点
         if (node.getValue().compareTo(parent.getValue()) == 0){
             parent = root;
         }
+
         SearchTreeNode<T> left = node.getLeft();
         SearchTreeNode<T> right = node.getRight();
 
+        //当前结点在父结点的左边
         if (parent.getLeft() != null &&
                 node.getValue().compareTo(parent.getLeft().getValue()) == 0) {
             if(left != null && right==null){
+                //删除结点只有一个孩子，孩子直接顶替该结点
                 parent.setLeft(node.getLeft());
+
             }else if(left == null && right!=null){
+                //删除结点只有一个孩子，孩子直接顶替该结点
                 parent.setLeft(node.getRight());
+
             }else if(left!= null && right!=null){
+                //结点左右都有孩子，将左孩子挂到右孩子最左孩子的左边
                 parent.setLeft(node.getRight());
                 leftToRight(right,left);
             }else {
+                //为叶子结点，直接删除
                 parent.setLeft(null);
             }
         }else{
             if(left != null && right==null){
+                //删除结点只有一个孩子，孩子直接顶替该结点
                 parent.setRight(node.getLeft());
+
             }else if(left == null && right!=null){
+                //删除结点只有一个孩子，孩子直接顶替该结点
                 parent.setRight(node.getRight());
+
             }else if(left != null && right!=null){
+                //结点左右都有孩子，将左孩子挂到右孩子最左孩子的左边
                 parent.setRight(node.getRight());
                 leftToRight(right,left);
+
             }else {
+                //为叶子结点，直接删除
                 parent.setRight(null);
             }
         }
+        //数量减一
         size.decrementAndGet();
         return true;
     }
 
 
-
+    /**
+     * 将左孩子挂到右孩子最左孩子的左边
+     * @param right
+     * @param left
+     */
     private void leftToRight(SearchTreeNode<T> right, SearchTreeNode<T> left) {
         while(right!=null && right.getLeft() != null){
             right = right.getLeft();
         }
         right.setLeft(left);
     }
+
+    /**
+     * 查找被删除结点的父结点
+     * @param node
+     * @return
+     */
     private SearchTreeNode<T> findRemoveParentNode(SearchTreeNode<T> node) {
         SearchTreeNode<T> parent = getRoot();
         SearchTreeNode<T> cur = parent;
@@ -201,6 +263,11 @@ public class SearchTree<T extends Comparable<T>> {
         return null;
     }
 
+    /**
+     * 查找是否是存在需要删除的结点
+     * @param node
+     * @return
+     */
     private SearchTreeNode<T> findRemoveNode(T node) {
         SearchTreeNode<T> cur = getRoot();
         while (cur != null) {
