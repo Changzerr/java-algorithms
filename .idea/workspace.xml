@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3400319e-95fa-4ed5-a0e4-83243e567b6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data-structures/src/main/java/tree/SearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-structures/src/test/java/tree/SearchTreeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures/src/main/java/tree/SearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-structures/src/main/java/tree/SearchTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
-  <component name="RunManager" selected="JUnit.RBTreeTest.testRBTreeFind">
+  <component name="RunManager" selected="JUnit.SearchTreeTest.testSearchTreeInsert">
     <configuration name="RBTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tree.RBTree" />
       <module name="data-structures" />
@@ -130,8 +130,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SearchTreeTest.testSearchTreeInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="data-structures" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tree" />
+      <option name="MAIN_CLASS_NAME" value="tree.SearchTreeTest" />
+      <option name="METHOD_NAME" value="testSearchTreeInsert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SearchTreeTest.testSearchTreeInsert" />
         <item itemvalue="JUnit.RBTreeTest.testRBTreeFind" />
         <item itemvalue="JUnit.RBTreeTest.testRBTreeInsert" />
         <item itemvalue="JUnit.RBTreeTest.testTree" />
@@ -152,7 +169,7 @@
       <workItem from="1667522823160" duration="19005000" />
       <workItem from="1667714541701" duration="2069000" />
       <workItem from="1667743077631" duration="612000" />
-      <workItem from="1667786157355" duration="1518000" />
+      <workItem from="1667786157355" duration="2356000" />
     </task>
     <task id="LOCAL-00001" summary="changzer: printRBTree()">
       <created>1667630825919</created>
@@ -203,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667715965676</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="changzer, code：二叉排序树">
+      <created>1667804319331</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667804319331</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +241,8 @@
     <MESSAGE value="changzer, docs：添加注释" />
     <MESSAGE value="changzer, code：红黑树查找" />
     <MESSAGE value="changzer, test：测试红黑树查找" />
-    <option name="LAST_COMMIT_MESSAGE" value="changzer, test：测试红黑树查找" />
+    <MESSAGE value="changzer, code：二叉排序树" />
+    <option name="LAST_COMMIT_MESSAGE" value="changzer, code：二叉排序树" />
   </component>
   <component name="WindowStateProjectService">
     <state x="510" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1667786588532">
@@ -225,31 +250,31 @@
     </state>
     <state x="510" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1667786588532" />
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1667523615202" />
-    <state x="555" y="112" width="799" height="603" key="CommitChangelistDialog2" timestamp="1667715963645">
+    <state x="555" y="112" width="799" height="603" key="CommitChangelistDialog2" timestamp="1667804317069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1667639993077" />
-    <state x="555" y="112" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1667715963645" />
-    <state width="1877" height="413" key="GridCell.Tab.0.bottom" timestamp="1667723011705">
+    <state x="555" y="112" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1667804317069" />
+    <state width="1877" height="413" key="GridCell.Tab.0.bottom" timestamp="1667805211036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="595" height="271" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1667640533302" />
-    <state width="1877" height="413" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1667723011705" />
-    <state width="1877" height="413" key="GridCell.Tab.0.center" timestamp="1667723011704">
+    <state width="1877" height="413" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1667805211036" />
+    <state width="1877" height="413" key="GridCell.Tab.0.center" timestamp="1667805211036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="595" height="271" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1667640533302" />
-    <state width="1877" height="413" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1667723011704" />
-    <state width="1877" height="413" key="GridCell.Tab.0.left" timestamp="1667723011703">
+    <state width="1877" height="413" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1667805211036" />
+    <state width="1877" height="413" key="GridCell.Tab.0.left" timestamp="1667805211036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="595" height="271" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1667640533302" />
-    <state width="1877" height="413" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1667723011703" />
-    <state width="1877" height="413" key="GridCell.Tab.0.right" timestamp="1667723011704">
+    <state width="1877" height="413" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1667805211036" />
+    <state width="1877" height="413" key="GridCell.Tab.0.right" timestamp="1667805211036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="595" height="271" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1667640533302" />
-    <state width="1877" height="413" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1667723011704" />
+    <state width="1877" height="413" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1667805211036" />
     <state width="595" height="271" key="GridCell.Tab.1.bottom" timestamp="1667640533303">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

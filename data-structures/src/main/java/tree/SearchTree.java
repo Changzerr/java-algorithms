@@ -1,5 +1,6 @@
 package tree;
 
+import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -128,5 +129,34 @@ public class SearchTree<T extends Comparable<T>> {
             }
         }
         return parent;
+    }
+
+    /**
+     * debug method,it used print the given node and its children nodes,
+     * every layer output in one line
+     * @param root
+     */
+    public void printTree(SearchTreeNode<T> root){
+        LinkedList<SearchTreeNode<T>> queue =new LinkedList<SearchTreeNode<T>>();
+        if(root==null){
+            return ;
+        }
+        queue.add(root);
+
+        while(!queue.isEmpty()){
+            LinkedList<SearchTreeNode<T>> queue2 =new LinkedList<SearchTreeNode<T>>();
+            while(!queue.isEmpty()){
+                SearchTreeNode<T> n = queue.poll();
+                System.out.print(n.getValue().toString()+"\t");
+                if(n.getLeft()!=null){
+                    queue2.add(n.getLeft());
+                }
+                if(n.getRight()!=null){
+                    queue2.add(n.getRight());
+                }
+            }
+            queue = queue2;
+            System.out.println();
+        }
     }
 }
