@@ -92,19 +92,20 @@ public class SearchTree<T extends Comparable<T>> {
         if (root.getLeft() == null) {
             //node become root
             root.setLeft(node);
+            size.incrementAndGet();
         } else {
             //find insert point
             SearchTreeNode<T> x = findParentNode(node);
             int cmp = x.getValue().compareTo(node.getValue());
 
             //value exists,ignore this node
-            if(cmp==0){
+            if (cmp == 0) {
                 return x.getValue();
             }
 
-            if(cmp>0){
+            if (cmp > 0) {
                 x.setLeft(node);
-            }else{
+            } else {
                 x.setRight(node);
             }
             size.incrementAndGet();
@@ -121,37 +122,98 @@ public class SearchTree<T extends Comparable<T>> {
             if (cmp > 0) {
                 parent = cur;
                 cur = cur.getLeft();
-            }else if (cmp < 0) {
+            } else if (cmp < 0) {
                 parent = cur;
                 cur = cur.getRight();
-            }else {
+            } else {
                 return cur;
             }
         }
         return parent;
     }
 
+
+    public boolean removeNode(SearchTreeNode<T> node) {
+        SearchTreeNode<T> parent = findRemoveParentNode(node);
+        if (parent == null) {
+            return false;
+        }
+        if (parent.getLeft() != null &&
+                node.getValue().compareTo(parent.getLeft().getValue()) == 0) {
+            if(node.getLeft() != null && node.getRight()==null){
+                parent.setLeft(node.getLeft());
+            }else if(node.getLeft() == null && node.getRight()!=null){
+                parent.setLeft(node.getRight());
+            }else {
+                parent.setLeft(node.getRight());
+                SearchTreeNode<T> left = node.getLeft();
+                SearchTreeNode<T> right = node.getRight();
+                while(right.getLeft() != null){
+                    right = right.getLeft();
+                }
+                right.setLeft(left);
+            }
+        }else{
+            if(node.getLeft() != null && node.getRight()==null){
+                parent.setRight(node.getLeft());
+            }else if(node.getLeft() == null && node.getRight()!=null){
+                parent.setRight(node.getRight());
+            }else {
+                parent.setRight(node.getRight());
+                SearchTreeNode<T> left = node.getLeft();
+                SearchTreeNode<T> right = node.getRight();
+                while(right.getLeft() != null){
+                    right = right.getLeft();
+                }
+                right.setLeft(left);
+            }
+        }
+        return true;
+    }
+
+
+
+    private SearchTreeNode<T> findRemoveParentNode(SearchTreeNode<T> node) {
+        SearchTreeNode<T> parent = getRoot();
+        SearchTreeNode<T> cur = parent;
+
+        while (cur != null) {
+            int cmp = cur.getValue().compareTo(node.getValue());
+            if (cmp > 0) {
+                parent = cur;
+                cur = cur.getLeft();
+            } else if (cmp < 0) {
+                parent = cur;
+                cur = cur.getRight();
+            } else {
+                return parent;
+            }
+        }
+        return null;
+    }
+
     /**
      * debug method,it used print the given node and its children nodes,
      * every layer output in one line
+     *
      * @param root
      */
-    public void printTree(SearchTreeNode<T> root){
-        LinkedList<SearchTreeNode<T>> queue =new LinkedList<SearchTreeNode<T>>();
-        if(root==null){
-            return ;
+    public void printTree(SearchTreeNode<T> root) {
+        LinkedList<SearchTreeNode<T>> queue = new LinkedList<SearchTreeNode<T>>();
+        if (root == null) {
+            return;
         }
         queue.add(root);
 
-        while(!queue.isEmpty()){
-            LinkedList<SearchTreeNode<T>> queue2 =new LinkedList<SearchTreeNode<T>>();
-            while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
+            LinkedList<SearchTreeNode<T>> queue2 = new LinkedList<SearchTreeNode<T>>();
+            while (!queue.isEmpty()) {
                 SearchTreeNode<T> n = queue.poll();
-                System.out.print(n.getValue().toString()+"\t");
-                if(n.getLeft()!=null){
+                System.out.print(n.getValue().toString() + "\t");
+                if (n.getLeft() != null) {
                     queue2.add(n.getLeft());
                 }
-                if(n.getRight()!=null){
+                if (n.getRight() != null) {
                     queue2.add(n.getRight());
                 }
             }

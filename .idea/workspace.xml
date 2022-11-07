@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3400319e-95fa-4ed5-a0e4-83243e567b6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data-structures/src/test/java/tree/SearchTreeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-structures/src/main/java/tree/SearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-structures/src/main/java/tree/SearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-structures/target/test-classes/tree/RBTreeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/data-structures/target/test-classes/tree/RBTreeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +169,7 @@
       <workItem from="1667522823160" duration="19005000" />
       <workItem from="1667714541701" duration="2069000" />
       <workItem from="1667743077631" duration="612000" />
-      <workItem from="1667786157355" duration="2356000" />
+      <workItem from="1667786157355" duration="6887000" />
     </task>
     <task id="LOCAL-00001" summary="changzer: printRBTree()">
       <created>1667630825919</created>
@@ -227,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667804319331</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="changzer, test：测试二叉排序树插入操作">
+      <created>1667805593508</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667805593508</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +249,8 @@
     <MESSAGE value="changzer, code：红黑树查找" />
     <MESSAGE value="changzer, test：测试红黑树查找" />
     <MESSAGE value="changzer, code：二叉排序树" />
-    <option name="LAST_COMMIT_MESSAGE" value="changzer, code：二叉排序树" />
+    <MESSAGE value="changzer, test：测试二叉排序树插入操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="changzer, test：测试二叉排序树插入操作" />
   </component>
   <component name="WindowStateProjectService">
     <state x="510" y="49" key="#com.intellij.ide.util.MemberChooser" timestamp="1667786588532">
@@ -250,11 +258,11 @@
     </state>
     <state x="510" y="49" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1667786588532" />
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1667523615202" />
-    <state x="555" y="112" width="799" height="603" key="CommitChangelistDialog2" timestamp="1667804317069">
+    <state x="555" y="112" width="799" height="603" key="CommitChangelistDialog2" timestamp="1667805591669">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1667639993077" />
-    <state x="555" y="112" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1667804317069" />
+    <state x="555" y="112" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1667805591669" />
     <state width="1877" height="413" key="GridCell.Tab.0.bottom" timestamp="1667805211036">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
