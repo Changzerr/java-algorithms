@@ -171,6 +171,7 @@ public class SearchTree<T extends Comparable<T>> {
                 parent.setRight(null);
             }
         }
+        size.decrementAndGet();
         return true;
     }
 
