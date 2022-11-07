@@ -132,40 +132,55 @@ public class SearchTree<T extends Comparable<T>> {
         return parent;
     }
 
-
+    public boolean removeNode(T value) {
+        SearchTreeNode<T> node = new SearchTreeNode<T>(value);
+        return removeNode(node);
+    }
     public boolean removeNode(SearchTreeNode<T> node) {
         SearchTreeNode<T> parent = findRemoveParentNode(node);
         if (parent == null) {
             return false;
         }
+        if (node.getValue().compareTo(parent.getValue()) == 0){
+            parent = root;
+        }
         if (parent.getLeft() != null &&
                 node.getValue().compareTo(parent.getLeft().getValue()) == 0) {
+
+            node = parent.getLeft();
             if(node.getLeft() != null && node.getRight()==null){
                 parent.setLeft(node.getLeft());
             }else if(node.getLeft() == null && node.getRight()!=null){
                 parent.setLeft(node.getRight());
-            }else {
+            }else if(node.getLeft() != null && node.getRight()!=null){
                 parent.setLeft(node.getRight());
                 SearchTreeNode<T> left = node.getLeft();
                 SearchTreeNode<T> right = node.getRight();
-                while(right.getLeft() != null){
+                while(right!=null && right.getLeft() != null){
                     right = right.getLeft();
                 }
                 right.setLeft(left);
+            }else {
+                parent.setLeft(null);
             }
         }else{
-            if(node.getLeft() != null && node.getRight()==null){
+            node = parent.getRight();
+            SearchTreeNode<T> left = node.getLeft();
+            SearchTreeNode<T> right = node.getRight();
+
+            if(left != null && right==null){
                 parent.setRight(node.getLeft());
-            }else if(node.getLeft() == null && node.getRight()!=null){
+            }else if(left == null && right!=null){
                 parent.setRight(node.getRight());
-            }else {
+            }else if(left != null && right!=null){
                 parent.setRight(node.getRight());
-                SearchTreeNode<T> left = node.getLeft();
-                SearchTreeNode<T> right = node.getRight();
-                while(right.getLeft() != null){
+
+                while(right!=null &&  right.getLeft() != null){
                     right = right.getLeft();
                 }
                 right.setLeft(left);
+            }else {
+                parent.setRight(null);
             }
         }
         return true;

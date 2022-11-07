@@ -16,6 +16,21 @@ public class SearchTreeTest {
         tree.addNode(1);
         tree.addNode(33);
         tree.addNode(111);
+
+        tree.printTree(tree.getRoot());
+    }
+
+    @Test
+    public void testSearchTreeDelete() {
+        SearchTree<Integer> tree = new SearchTree<Integer>();
+        tree.addNode(3);
+        tree.addNode(7);
+        tree.addNode(1);
+        tree.addNode(33);
+        tree.addNode(111);
+
+        System.out.println(tree.removeNode(3));
+
         tree.printTree(tree.getRoot());
     }
 }
