@@ -133,52 +133,40 @@ public class SearchTree<T extends Comparable<T>> {
     }
 
     public boolean removeNode(T value) {
-        SearchTreeNode<T> node = new SearchTreeNode<T>(value);
+        SearchTreeNode<T> node = findRemoveNode(value);
+        if (node == null) {
+            return false;
+        }
         return removeNode(node);
     }
     public boolean removeNode(SearchTreeNode<T> node) {
         SearchTreeNode<T> parent = findRemoveParentNode(node);
-        if (parent == null) {
-            return false;
-        }
         if (node.getValue().compareTo(parent.getValue()) == 0){
             parent = root;
         }
+        SearchTreeNode<T> left = node.getLeft();
+        SearchTreeNode<T> right = node.getRight();
+
         if (parent.getLeft() != null &&
                 node.getValue().compareTo(parent.getLeft().getValue()) == 0) {
-
-            node = parent.getLeft();
-            if(node.getLeft() != null && node.getRight()==null){
+            if(left != null && right==null){
                 parent.setLeft(node.getLeft());
-            }else if(node.getLeft() == null && node.getRight()!=null){
+            }else if(left == null && right!=null){
                 parent.setLeft(node.getRight());
-            }else if(node.getLeft() != null && node.getRight()!=null){
+            }else if(left!= null && right!=null){
                 parent.setLeft(node.getRight());
-                SearchTreeNode<T> left = node.getLeft();
-                SearchTreeNode<T> right = node.getRight();
-                while(right!=null && right.getLeft() != null){
-                    right = right.getLeft();
-                }
-                right.setLeft(left);
+                leftToRight(right,left);
             }else {
                 parent.setLeft(null);
             }
         }else{
-            node = parent.getRight();
-            SearchTreeNode<T> left = node.getLeft();
-            SearchTreeNode<T> right = node.getRight();
-
             if(left != null && right==null){
                 parent.setRight(node.getLeft());
             }else if(left == null && right!=null){
                 parent.setRight(node.getRight());
             }else if(left != null && right!=null){
                 parent.setRight(node.getRight());
-
-                while(right!=null &&  right.getLeft() != null){
-                    right = right.getLeft();
-                }
-                right.setLeft(left);
+                leftToRight(right,left);
             }else {
                 parent.setRight(null);
             }
@@ -188,10 +176,15 @@ public class SearchTree<T extends Comparable<T>> {
 
 
 
+    private void leftToRight(SearchTreeNode<T> right, SearchTreeNode<T> left) {
+        while(right!=null && right.getLeft() != null){
+            right = right.getLeft();
+        }
+        right.setLeft(left);
+    }
     private SearchTreeNode<T> findRemoveParentNode(SearchTreeNode<T> node) {
         SearchTreeNode<T> parent = getRoot();
         SearchTreeNode<T> cur = parent;
-
         while (cur != null) {
             int cmp = cur.getValue().compareTo(node.getValue());
             if (cmp > 0) {
@@ -202,6 +195,21 @@ public class SearchTree<T extends Comparable<T>> {
                 cur = cur.getRight();
             } else {
                 return parent;
+            }
+        }
+        return null;
+    }
+
+    private SearchTreeNode<T> findRemoveNode(T node) {
+        SearchTreeNode<T> cur = getRoot();
+        while (cur != null) {
+            int cmp = cur.getValue().compareTo(node);
+            if (cmp > 0) {
+                cur = cur.getLeft();
+            } else if (cmp < 0) {
+                cur = cur.getRight();
+            } else {
+                return cur;
             }
         }
         return null;
