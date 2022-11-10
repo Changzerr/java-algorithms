@@ -11,7 +11,7 @@ public class AVLTreeTest {
 
     @Test
     public  void testAVLInsert() {
-        AVLTree aTree = new AVLTree();
+        AVLTree<Integer> aTree = new AVLTree<>();
         int[] arr = { 3, 2, 1, 4, 5, 6, 7, 10, 9, 8 };
         for (int i : arr) {
             aTree.insert(i);
@@ -21,7 +21,7 @@ public class AVLTreeTest {
         System.out.print("中序遍历结果：");
         aTree.inOrder();
 
-        AVLTree bTree = new AVLTree();
+        AVLTree<Integer> bTree = new AVLTree<>();
         int[] arr2 = { 3,2,1,4,5,6,7,16,15,14,13,12,11,10,8,9 };
         for (int i : arr2) {
             bTree.insert(i);
