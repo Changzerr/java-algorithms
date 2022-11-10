@@ -5,29 +5,31 @@ package tree;
  * @author changzer
  *
  */
-public class AVLTree {
 
-    private AVLnode root;
+class AVLnode<T extends Comparable<T>> {
+    T data; // 结点数据
+    int bf; // 平衡因子,左高记为1，右高记为-1，平衡记为0
+    AVLnode<T> lChild, rChild; // 左右孩子
 
-    private class AVLnode {
-        int data; // 结点数据
-        int bf; // 平衡因子,左高记为1，右高记为-1，平衡记为0
-        AVLnode lChild, rChild; // 左右孩子
-
-        public AVLnode(int data) {
-            this.data = data;
-            bf = 0;
-            lChild = null;
-            rChild = null;
-        }
+    AVLnode(T value) {
+        this.data = value;
+        bf = 0;
+        lChild = null;
+        rChild = null;
     }
+}
+public class AVLTree<T extends Comparable<T>> {
+
+    private AVLnode<T> root;
+
+
 
     /**
      * 右旋
      * 返回新的根结点
      */
-    public AVLnode rRotate(AVLnode p) {
-        AVLnode l = p.lChild;
+    public AVLnode<T> rRotate(AVLnode<T> p) {
+        AVLnode<T> l = p.lChild;
         p.lChild = l.rChild;
         l.rChild = p;
         return l;
@@ -37,8 +39,8 @@ public class AVLTree {
      * 左旋
      * 返回新的根结点
      */
-    public AVLnode lRotate(AVLnode p) {
-        AVLnode r = p.rChild;
+    public AVLnode<T> lRotate(AVLnode<T> p) {
+        AVLnode<T> r = p.rChild;
         p.rChild = r.lChild;
         r.lChild = p;
         return r;
@@ -48,15 +50,15 @@ public class AVLTree {
      * 左平衡旋转(左子树高度比右子树高2时(左斜)执行的操作)
      * 返回值为新的根结点
      */
-    public AVLnode leftBalance(AVLnode p) {
-        AVLnode l = p.lChild;
+    public AVLnode<T> leftBalance(AVLnode<T> p) {
+        AVLnode<T> l = p.lChild;
         switch (l.bf) {
         case 1: // 情況(1)
             p.bf = 0;
             l.bf = 0;
             return rRotate(p);
         case -1:
-            AVLnode lr = l.rChild;
+            AVLnode<T> lr = l.rChild;
             switch (lr.bf) {
             case 1: // 情況(2)
                 p.bf = -1;
@@ -90,15 +92,15 @@ public class AVLTree {
      * 右平衡旋转(右子树高度比左子树高2时执行的操作)
      * 返回值为新的根结点
      */
-    public AVLnode rightBalance(AVLnode p) {
-        AVLnode r = p.rChild;
+    public AVLnode<T> rightBalance(AVLnode<T> p) {
+        AVLnode<T> r = p.rChild;
         switch (r.bf) {
         case -1:
             p.bf = 0;
             r.bf = 0;
             return lRotate(p);
         case 1:
-            AVLnode rl = r.lChild;
+            AVLnode<T> rl = r.lChild;
             switch (rl.bf) {
             case 1:
                 r.bf = -1;
@@ -132,20 +134,21 @@ public class AVLTree {
      */
     boolean taller;// 树是否长高
 
-    public void insert(int key) {
+    public void insert(T key) {
         root = insert(root, key);
     }
 
-    private AVLnode insert(AVLnode tree, int key) {// 二叉查找树的插入操作一样，但多了树是否长高的判断（树没长高就完全类似BST二叉树），要记得每次对taller赋值
+    private AVLnode<T> insert(AVLnode<T> tree, T  key) {// 二叉查找树的插入操作一样，但多了树是否长高的判断（树没长高就完全类似BST二叉树），要记得每次对taller赋值
         if (tree == null) {
             taller = true;
-            return new AVLnode(key);
+            return new AVLnode<T>(key);
         }
+        int cmp = tree.data.compareTo(key);
         if (key == tree.data) {
             System.out.println("数据重复，无法插入！");
             taller = false;
             return tree;
-        } else if (key < tree.data) {
+        } else if (cmp > 0) {
             tree.lChild = insert(tree.lChild, key);
             if (taller == true) { // 左子树长高了，要对tree的平衡度分析
                 switch (tree.bf) {
@@ -162,7 +165,7 @@ public class AVLTree {
                     return tree;
                 }
             }
-        } else if (key > tree.data) {
+        } else if (cmp < 0) {
             tree.rChild = insert(tree.rChild, key);
             if (taller == true) { // 右子树长高了，要对tree的平衡度分析
                 switch (tree.bf) {
@@ -191,7 +194,7 @@ public class AVLTree {
         System.out.println();
     }
 
-    private void preOrderTraverse(AVLnode node) {
+    private void preOrderTraverse(AVLnode<T> node) {
         if (node == null) {
             return;
         }
@@ -208,7 +211,7 @@ public class AVLTree {
         System.out.println();
     }
 
-    private void inOrderTraverse(AVLnode node) {
+    private void inOrderTraverse(AVLnode<T> node) {
         if (node == null) {
             return;
         }
