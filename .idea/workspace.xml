@@ -73,7 +73,23 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SearchTreeTest.testSearchTreeDelete">
+  <component name="RunManager" selected="JUnit.AVLTreeTest.testAVLInsert">
+    <configuration name="AVLTreeTest.testAVLInsert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="data-structures" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tree" />
+      <option name="MAIN_CLASS_NAME" value="tree.AVLTreeTest" />
+      <option name="METHOD_NAME" value="testAVLInsert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RBTreeTest.testRBTreeFind" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="data-structures" />
       <extension name="coverage">
@@ -101,22 +117,6 @@
       <option name="PACKAGE_NAME" value="tree" />
       <option name="MAIN_CLASS_NAME" value="tree.RBTreeTest" />
       <option name="METHOD_NAME" value="testRBTreeInsert" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RBTreeTest.testTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="data-structures" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tree" />
-      <option name="MAIN_CLASS_NAME" value="tree.RBTreeTest" />
-      <option name="METHOD_NAME" value="testTree" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AVLTreeTest.testAVLInsert" />
         <item itemvalue="JUnit.SearchTreeTest.testSearchTreeDelete" />
         <item itemvalue="JUnit.SearchTreeTest.testSearchTreeInsert" />
         <item itemvalue="JUnit.RBTreeTest.testRBTreeFind" />
         <item itemvalue="JUnit.RBTreeTest.testRBTreeInsert" />
-        <item itemvalue="JUnit.RBTreeTest.testTree" />
       </list>
     </recent_temporary>
   </component>
@@ -313,30 +313,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="432" y="211" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.680@0.0.1280.680" timestamp="1668078816044" />
-    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2" timestamp="1667823465661">
+    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2" timestamp="1668088438383">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1667823465661" />
+    <state x="351" y="63" width="799" height="603" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1668088438383" />
     <state x="555" y="112" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1667805591669" />
-    <state width="1237" height="251" key="GridCell.Tab.0.bottom" timestamp="1667823540769">
+    <state width="1237" height="244" key="GridCell.Tab.0.bottom" timestamp="1668088532312">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="251" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1667823540769" />
+    <state width="1237" height="244" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1668088532312" />
     <state width="1877" height="413" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1667805211036" />
-    <state width="1237" height="251" key="GridCell.Tab.0.center" timestamp="1667823540768">
+    <state width="1237" height="244" key="GridCell.Tab.0.center" timestamp="1668088532312">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="251" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1667823540768" />
+    <state width="1237" height="244" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1668088532312" />
     <state width="1877" height="413" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1667805211036" />
-    <state width="1237" height="251" key="GridCell.Tab.0.left" timestamp="1667823540768">
+    <state width="1237" height="244" key="GridCell.Tab.0.left" timestamp="1668088532311">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="251" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1667823540768" />
+    <state width="1237" height="244" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1668088532311" />
     <state width="1877" height="413" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1667805211036" />
-    <state width="1237" height="251" key="GridCell.Tab.0.right" timestamp="1667823540768">
+    <state width="1237" height="244" key="GridCell.Tab.0.right" timestamp="1668088532312">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="251" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1667823540768" />
+    <state width="1237" height="244" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1668088532312" />
     <state width="1877" height="413" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1667805211036" />
     <state width="1237" height="251" key="GridCell.Tab.1.bottom" timestamp="1667823540769">
       <screen x="0" y="0" width="1280" height="680" />
